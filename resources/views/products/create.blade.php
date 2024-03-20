@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Create a Product</h1>
+        <h1>Create a User</h1>
         <div>
             @if($errors->any())
             <ul>
@@ -29,29 +29,30 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="qty" class="col-sm-2 col-form-label">Quantity:</label>
+                <label for="email" class="col-sm-2 col-form-label">Email:</label>
                 <div class="col-sm-10">
-                    <input type="text" name="qty" id="qty" placeholder="Required" class="form-control" required>
-                    <div class="invalid-feedback">Please provide a quantity.</div>
+                    <input type="email" name="email" id="email" placeholder="Required" class="form-control" required>
+                    <div class="invalid-feedback">Please provide a email.</div>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="price" class="col-sm-2 col-form-label">Price:</label>
+                <label for="company" class="col-sm-2 col-form-label">Company:</label>
                 <div class="col-sm-10">
-                    <input type="text" name="price" id="price" placeholder="Required" class="form-control" required>
-                    <div class="invalid-feedback">Please provide a price.</div>
+                    <input type="text" name="company" id="company" placeholder="Required" class="form-control" required>
+                    <div class="invalid-feedback">Please provide a company.</div>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="description" class="col-sm-2 col-form-label">Description:</label>
+                <label for="role" class="col-sm-2 col-form-label">Job Role:</label>
                 <div class="col-sm-10">
-                    <input type="text" name="description" id="description" placeholder="Required" class="form-control" required>
-                    <div class="invalid-feedback">Please provide a description.</div>
+                    <input type="text" name="role" id="role" placeholder="Required" class="form-control" required>
+                    <div class="invalid-feedback">Please provide a Job Role.</div>
                 </div>
             </div>
+            
             <div class="form-group row">
                 <div class="col-sm-10 offset-sm-2">
-                    <button type="submit" class="btn btn-primary">Save a New Product</button>
+                    <button type="submit" class="btn btn-primary">Save a New User</button>
                 </div>
             </div>
         </form>

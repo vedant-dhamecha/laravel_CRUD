@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Product</h1>
+        <h1>User Management</h1>
         <div class="row">
             <div class="col-md-12">
                 @if(session()->has('success'))
@@ -24,7 +24,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <a class="btn btn-primary" href="{{route('product.create')}}">Create a Product</a>
+                <a class="btn btn-primary" href="{{route('product.create')}}">Create a User</a>
             </div>
         </div>
         <div class="row">
@@ -34,11 +34,11 @@
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
-                            <th>Qty</th>
-                            <th>Price</th>
-                            <th>Description</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Email</th>
+                            <th>Company</th>
+                            <th>Job Role</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,11 +46,11 @@
                             <tr>
                                 <td>{{$product->id}}</td>
                                 <td>{{$product->name}}</td>
-                                <td>{{$product->qty}}</td>
-                                <td>{{$product->price}}</td>
-                                <td>{{$product->description}}</td>
+                                <td>{{$product->email}}</td>
+                                <td>{{$product->company}}</td>
+                                <td>{{$product->role}}</td>
                                 <td>
-                                    <a class="btn btn-warning" href="{{route('product.edit', ['product' => $product])}}">Edit</a>
+                                    <a class="btn btn-warning" href="{{route('product.edit', ['product' => $product])}}">Update</a>
                                 </td>
                                 <td>
                                     <form method="post" action="{{route('product.destroy', ['product' => $product])}}">

@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Edit a Product</h1>
+        <h1>Edit a User</h1>
         <div>
             @if($errors->any())
             <ul>
@@ -28,19 +28,19 @@
                 <div class="invalid-feedback">Please provide a name.</div>
             </div>
             <div class="form-group">
-                <label for="qty">Qty</label>
-                <input type="text" name="qty" id="qty" placeholder="Qty" value="{{$product->qty}}" class="form-control" required>
-                <div class="invalid-feedback">Please provide a quantity.</div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="email" value="{{$product->email}}" class="form-control" required>
+                <div class="invalid-feedback">Please provide a email.</div>
             </div>
             <div class="form-group">
-                <label for="price">Price</label>
-                <input type="text" name="price" id="price" placeholder="Price" value="{{$product->price}}" class="form-control" required>
-                <div class="invalid-feedback">Please provide a price.</div>
+                <label for="price">Company</label>
+                <input type="text" name="company" id="company" placeholder="company" value="{{$product->company}}" class="form-control" required>
+                <div class="invalid-feedback">Please provide a company.</div>
             </div>
             <div class="form-group">
-                <label for="description">Description</label>
-                <input type="text" name="description" id="description" placeholder="Description" value="{{$product->description}}" class="form-control" required>
-                <div class="invalid-feedback">Please provide a description.</div>
+                <label for="description">Job Role</label>
+                <input type="text" name="role" id="role" placeholder="role" value="{{$product->role}}" class="form-control" required>
+                <div class="invalid-feedback">Please provide a role.</div>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Update</button>
