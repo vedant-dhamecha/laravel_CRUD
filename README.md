@@ -1,14 +1,14 @@
 ## CRUD OPERATION WITH LARAVEL
-## PRODUCT VIEW PAGE
-![Screenshot 2024-03-19 184021](https://github.com/vedant-dhamecha/laravel_CRUD/assets/105575987/f0e2c220-cce1-432b-889b-d63d2921c891)
-## CREATING A NEW PRODUCT
-![Screenshot 2024-03-19 184118](https://github.com/vedant-dhamecha/laravel_CRUD/assets/105575987/9424fa31-89d8-4293-bf2c-b8f5ea51c324)
-## NEW PRODUCT CREATED
-![Screenshot 2024-03-19 184138](https://github.com/vedant-dhamecha/laravel_CRUD/assets/105575987/d735a573-3073-4509-88d6-a3299da799ff)
-## UPDATING A PRODUCT
-![Screenshot 2024-03-19 184205](https://github.com/vedant-dhamecha/laravel_CRUD/assets/105575987/b665ebf0-fd7f-430c-b003-c3012c4c8607)
-## PRODUCT UPDATED
-![Screenshot 2024-03-19 184217](https://github.com/vedant-dhamecha/laravel_CRUD/assets/105575987/05df09c9-8cbe-4ed4-b7e9-870de8838d5e)
+## User VIEW PAGE
+![Screenshot 2024-03-20 181235](https://github.com/vedant-dhamecha/laravel_CRUD/assets/105575987/37709673-8920-408f-89dc-b5d752fd24f6)
+
+## CREATING A NEW USER
+![Screenshot 2024-03-20 182511](https://github.com/vedant-dhamecha/laravel_CRUD/assets/105575987/2f2d24c1-f0d1-4989-bce2-038c37c4e1e2)
+
+## UPDATING A USER
+![Screenshot 2024-03-20 182533](https://github.com/vedant-dhamecha/laravel_CRUD/assets/105575987/9af568cc-8a0b-492a-8071-f26de913cd10)
+
+
 
 
 
