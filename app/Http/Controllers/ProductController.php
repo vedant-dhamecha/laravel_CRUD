@@ -4,53 +4,85 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $products = Product::all();
         return view('products.index', ['products' => $products]);
-        
     }
 
-    public function create(){
+    public function create()
+    {
         return view('products.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $data = $request->validate([
+            'profile' => 'nullable', 
             'name' => 'required',
             'email' => 'required',
             'company' => 'required',
-            'role' => 'nullable'
+            'role' => 'required'
         ]);
+
+        
+        if ($request->hasFile('profile')) {
+            $file = $request->file('profile');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $filePath = $file->storeAs('profiles', $fileName, 'public');
+
+            $data['profile'] = $filePath;
+        }
 
         $newProduct = Product::create($data);
 
-        return redirect(route('product.index'));
-
+        return redirect(route('product.index'))->with('success', 'User Created Successfully');
     }
 
-    public function edit(Product $product){
+    public function edit(Product $product)
+    {
         return view('products.edit', ['product' => $product]);
     }
 
-    public function update(Product $product, Request $request){
-        $data = $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'company' => 'required',
-            'role' => 'nullable'
-        ]);
+    public function update(Product $product, Request $request)
+{
+    $data = $request->validate([
+        'profile' => 'nullable', // Add image validation
+        'name'=>'required', 
+        'email' => 'required',
+        'company' => 'required',
+        'role' => 'required'
+    ]);
 
-        $product->update($data);
+    if ($request->hasFile('profile')) {
+        $file = $request->file('profile');
+        $fileName = time() . '_' . $file->getClientOriginalName();
+        $filePath = $file->storeAs('profiles', $fileName, 'public');
+        
+        // Delete old profile image if exists
+        if ($product->profile) {
+            Storage::disk('public')->delete($product->profile);
+        }
 
-        return redirect(route('product.index'))->with('success', 'User Updated Succesffully');
-
+        $data['profile'] = $filePath;
     }
 
-    public function destroy(Product $product){
+    $product->update($data);
+
+    return redirect(route('product.index'))->with('success', 'User Updated Successfully');
+}
+
+
+    public function destroy(Product $product)
+    {
+        
+        Storage::disk('public')->delete($product->profile);
+        
         $product->delete();
-        return redirect(route('product.index'))->with('success', 'User deleted Succesffully');
+        return redirect(route('product.index'))->with('success', 'User deleted Successfully');
     }
 }

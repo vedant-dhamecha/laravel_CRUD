@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Crud Operation</title>
+    <title>User Management</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <style>
         /* Add custom styles here if needed */
@@ -33,6 +33,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Profile</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Company</th>
@@ -42,9 +43,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($products as $product )
+                        @foreach($products as $product)
                             <tr>
                                 <td>{{$product->id}}</td>
+                                <td>
+                                    @if($product->profile)
+                                        <img class="" src="{{ asset('storage/' . $product->profile) }}" alt="Profile Image" style="max-width: 75px; clip-path: circle();"> 
+                                        @else
+                                        No Image
+                                    @endif
+                                </td>
                                 <td>{{$product->name}}</td>
                                 <td>{{$product->email}}</td>
                                 <td>{{$product->company}}</td>

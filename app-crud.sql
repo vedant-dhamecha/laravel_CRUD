@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2024 at 02:31 PM
+-- Generation Time: Mar 20, 2024 at 01:16 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -138,10 +138,11 @@ CREATE TABLE `password_reset_tokens` (
 
 CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `profile` text NOT NULL,
   `name` varchar(255) NOT NULL,
-  `qty` int(11) NOT NULL,
-  `price` decimal(8,2) NOT NULL,
-  `description` text NOT NULL,
+  `email` text NOT NULL,
+  `company` text NOT NULL,
+  `role` text NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -150,12 +151,12 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `qty`, `price`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'apple', 2, 2.22, 'red apple', '2024-03-19 06:07:59', '2024-03-19 07:38:44'),
-(2, 'orange', 2, 3.22, 'yellow', '2024-03-19 06:10:28', '2024-03-19 06:10:28'),
-(4, 'banana', 3, 200.23, 'YELLOW', '2024-03-19 07:16:27', '2024-03-19 07:16:27'),
-(5, 'lemon', 3, 20.30, 'lsd', '2024-03-19 07:16:56', '2024-03-19 07:16:56'),
-(6, 'custord apple', 30, 2030.25, 'bad', '2024-03-19 07:41:28', '2024-03-19 07:42:09');
+INSERT INTO `products` (`id`, `profile`, `name`, `email`, `company`, `role`, `created_at`, `updated_at`) VALUES
+(1, 'profiles/1710936238_image_part_001.jpg', 'Vedant Dhamecha', 'vedantdhamecha@gmail.com', 'Spaculus Software', 'PHP', '2024-03-20 06:33:58', '2024-03-20 06:33:58'),
+(2, 'profiles/1710936356_image_part_002.jpg', 'Grishma Patel', 'grish1610@gmail.com', 'Spaculus Software', 'ui', '2024-03-20 06:35:56', '2024-03-20 06:35:56'),
+(3, 'profiles/1710936426_image_part_003.jpg', 'Vraj Patel', 'vrajpatel@gmail.com', 'ONGC', 'frontend', '2024-03-20 06:37:06', '2024-03-20 06:37:06'),
+(4, 'profiles/1710936478_image_part_004.jpg', 'Deep Yadav', 'deep.yadav@gmail.com', 'Alite Projects', 'backend', '2024-03-20 06:37:58', '2024-03-20 06:37:58'),
+(5, 'profiles/1710936599_image_part_005.jpg', 'Dhvani Patel', 'dhvanipatel123@gmail.com', 'Crest', 'frontend', '2024-03-20 06:39:59', '2024-03-20 06:39:59');
 
 -- --------------------------------------------------------
 
@@ -177,7 +178,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('OS96YxCDplzAQIgjWeI1nnU54qPF09ZeKZ8vq7yP', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoid0xkYVlDSjc2NVBabzhyUkphNHZ4dTNpWmUzcGpISjJMNTh6V3FnWSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1710853929);
+('RgZCJuux9P5XnlxXLDPzm5ko337QaN6g9iaiiFiS', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoieklHaDVsbUYwT01kdlROVWFSMjMxWnFPZFlTOXF3c2paU1owdDhFbyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0Ijt9fQ==', 1710936940);
 
 -- --------------------------------------------------------
 
@@ -291,7 +292,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `users`
