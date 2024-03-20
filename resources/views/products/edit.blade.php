@@ -37,7 +37,7 @@
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="email" value="{{$product->email}}" class="form-control" required>
+                <input type="email" pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" name="email" id="email" placeholder="email" value="{{$product->email}}" class="form-control" required>
                 <div class="invalid-feedback">Please provide a email.</div>
             </div>
             <div class="form-group">
@@ -48,7 +48,7 @@
             <div class="form-group row">
                 <label for="role" class="col-sm-2 col-form-label">Job Role:</label>
                 <div class="col-sm-10">
-                <input type="radio" id="php" name="role" value="PHP" {{ $product->role == 'PHP' ? 'checked' : ''}}>
+                        <input type="radio" id="php" name="role" value="PHP" {{ $product->role == 'PHP' ? 'checked' : ''}}>
                         <label for="php">PHP Intern</label><br>
 
                         <input type="radio" id="backend" name="role" value="backend" {{ $product->role == 'backend' ? 'checked' : ''}}>

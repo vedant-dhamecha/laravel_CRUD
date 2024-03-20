@@ -5,6 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create a User</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+    <style>
+        .was-validated input:invalid {
+            border-color: #dc3545;
+        }
+
+        .was-validated input:valid {
+            border-color: #28a745;
+        }
+
+        .was-validated textarea:invalid {
+            border-color: #dc3545;
+        }
+
+        .was-validated textarea:valid {
+            border-color: #28a745;
+        }
+
+        .was-validated select:invalid {
+            border-color: #dc3545;
+        }
+
+        .was-validated select:valid {
+            border-color: #28a745;
+        }
+
+        .was-validated .form-control:invalid:not(:focus) ~ .invalid-feedback,
+        .was-validated .form-control:invalid:focus ~ .invalid-feedback {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -39,8 +70,8 @@
             <div class="form-group row">
                 <label for="email" class="col-sm-2 col-form-label">Email:</label>
                 <div class="col-sm-10">
-                    <input type="email" name="email" id="email" placeholder="Required" class="form-control" required>
-                    <div class="invalid-feedback">Please provide an email.</div>
+                    <input type="email" pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" name="email" id="email" placeholder="Required" class="form-control" required>
+                    <div class="invalid-feedback">Please provide a valid email address.</div>
                 </div>
             </div>
             <div class="form-group row">
@@ -51,21 +82,25 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="role" class="col-sm-2 col-form-label">Job Role:</label>
+                <label class="col-sm-2">Job Role:</label>
                 <div class="col-sm-10">
-                <input type="radio" id="php" name="role" value="PHP">
-                        <label for="php">PHP Intern</label><br>
-
-                        <input type="radio" id="backend" name="role" value="backend">
-                        <label for="backend">Backend Dev</label><br>
-
-                        <input type="radio" id="frontend" name="role" value="frontend">
-                        <label for="frontend">Frontend Dev</label><br>
-
-                        <input type="radio" id="ui" name="role" value="ui">
-                        <label for="ui">UI Designer</label><br>
-                    
-                        <div class="invalid-feedback">Please provide a Job Role.</div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="role" id="php" value="PHP" required>
+                        <label class="form-check-label" for="php">PHP Intern</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="role" id="backend" value="backend" required>
+                        <label class="form-check-label" for="backend">Backend Dev</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="role" id="frontend" value="frontend" required>
+                        <label class="form-check-label" for="frontend">Frontend Dev</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="role" id="ui" value="ui" required>
+                        <label class="form-check-label" for="ui">UI Designer</label>
+                    </div>
+                    <div class="invalid-feedback">Please select a job role.</div>
                 </div>
             </div>
             
