@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,31 +11,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
     <style>
-        .was-validated input:invalid,
-        .was-validated textarea:invalid,
-        .was-validated select:invalid {
-            border-color: #dc3545;
-        }
+    .was-validated input:invalid,
+    .was-validated textarea:invalid,
+    .was-validated select:invalid {
+        border-color: #dc3545;
+    }
 
-        .was-validated input:valid,
-        .was-validated textarea:valid,
-        .was-validated select:valid {
-            border-color: #28a745;
-        }
+    .was-validated input:valid,
+    .was-validated textarea:valid,
+    .was-validated select:valid {
+        border-color: #28a745;
+    }
 
-        .was-validated .form-control:invalid:not(:focus) ~ .invalid-feedback,
-        .was-validated .form-control:invalid:focus ~ .invalid-feedback {
-            display: block;
-        }
+    .was-validated .form-control:invalid:not(:focus)~.invalid-feedback,
+    .was-validated .form-control:invalid:focus~.invalid-feedback {
+        display: block;
+    }
 
-        .concert-one-regular {
-            font-family: "Concert One", sans-serif;
-            font-weight: 800;
-            font-style: normal;
-            font-size: 40px;
-        }
+    .concert-one-regular {
+        font-family: "Concert One", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        font-size: 40px;
+    }
     </style>
 </head>
+
 <body>
     <div class="container vh-100 gradient-custom">
         <h1 class="text-center font-heading mb-6 concert-one-regular">Create a New User</h1>
@@ -48,7 +50,8 @@
             @endif
         </div>
         <br>
-        <form method="post" action="{{route('product.store')}}" class="needs-validation" novalidate enctype="multipart/form-data">
+        <form method="post" action="{{route('product.store')}}" class="needs-validation" novalidate
+            enctype="multipart/form-data">
             @csrf
             @method('post')
             <div class="form-group row">
@@ -68,7 +71,8 @@
             <div class="form-group row">
                 <label for="email" class="col-sm-2 col-form-label">Email:</label>
                 <div class="col-sm-10">
-                    <input type="email" pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" name="email" id="email" placeholder="Required" class="form-control" required>
+                    <input type="email" pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" name="email" id="email"
+                        placeholder="Required" class="form-control" required>
                     <div class="invalid-feedback">Please provide a valid email address.</div>
                 </div>
             </div>
@@ -112,7 +116,8 @@
                         <label class="form-check-label" for="backend">Backend Dev</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="role" id="frontend" value="Frontend" required>
+                        <input class="form-check-input" type="radio" name="role" id="frontend" value="Frontend"
+                            required>
                         <label class="form-check-label" for="frontend">Frontend Dev</label>
                     </div>
                     <div class="form-check">
@@ -131,4 +136,5 @@
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
