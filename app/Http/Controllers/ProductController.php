@@ -22,13 +22,17 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
+            'date'=>'required',
             'profile' => 'nullable', 
             'name' => 'required',
             'email' => 'required',
+            'qua'=>'required',
             'company' => 'required',
             'role' => 'required'
         ]);
-
+        
+        $data['qua'] = json_encode($request->qua);
+        
         
         if ($request->hasFile('profile')) {
             $file = $request->file('profile');
@@ -51,9 +55,11 @@ class ProductController extends Controller
     public function update(Product $product, Request $request)
 {
     $data = $request->validate([
-        'profile' => 'nullable', // Add image validation
+        'date'=>'required',
+        'profile' => 'nullable',
         'name'=>'required', 
         'email' => 'required',
+        'qua'=>'required',
         'company' => 'required',
         'role' => 'required'
     ]);

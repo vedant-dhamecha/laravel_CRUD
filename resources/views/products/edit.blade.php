@@ -31,10 +31,37 @@
                 </div>
             </div>
             <div class="form-group">
+                <lable for="date">Date:</lable>
+                <div class="col-sm-10">
+                    <input type="date" name="date" id="date" placeholder="required" class="form-control" value="{{$product->date}}" required>
+                    <div class="invalid-feedback">Please provide a date.</div>
+                </div>
+            </div>
+            <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name" placeholder="Name" value="{{$product->name}}" class="form-control" required>
                 <div class="invalid-feedback">Please provide a name.</div>
             </div>
+
+
+            <div class="form-group row">
+    <label class="col-sm-2">Qualification:</label>
+    <div class="col-sm-10">
+        <br>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="qua[]" id="ug" value="UG" {{ strpos($product->qua, 'UG') !== false ? 'checked' : '' }}>
+            <label class="form-check-label" for="ug">UG</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="qua[]" id="pg" value="PG" {{ strpos($product->qua, 'PG') !== false ? 'checked' : '' }}>
+            <label class="form-check-label" for="pg">PG</label>
+        </div>
+        <div class="invalid-feedback">Please select a Qualification</div>
+    </div>
+</div>
+
+            
+            
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" name="email" id="email" placeholder="email" value="{{$product->email}}" class="form-control" required>

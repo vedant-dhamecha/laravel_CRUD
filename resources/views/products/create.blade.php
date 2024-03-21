@@ -71,16 +71,41 @@
                 <label for="email" class="col-sm-2 col-form-label">Email:</label>
                 <div class="col-sm-10">
                     <input type="email" pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" name="email" id="email" placeholder="Required" class="form-control" required>
-                    <div class="invalid-feedback">Please provide a valid email address.</div>
+                    <div class="invalid-feedback">Please provide a valid email address</div>
                 </div>
+            </div>
+            <div class="form-group row">
+                <lable for="date" class="col-sm-2 col-form-lable">Date:</lable>
+                <div class="col-sm-10"><input type="date" name="date" id="date" placeholder="required" class="form-control" required>
+                <div class="invalid-feedback">Please provide a date.</div>
+            </div>
+            
+            <div class="form-group row">
+                <label class="col-sm-2">Qualification:</label>
+                <div class="col-sm-10">
+                    <br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="qua[]" id="ug" value="UG" >
+                        <label class="form-check-label" for="qua">UG</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="qua[]" id="pg" value="PG" >
+                        <label class="form-check-label" for="qua">PG</label>
+                    </div>
+                    <div class="invalid-feedback">Please select a Qualification</div>
+                </div>
+            </div>
+            
+
             </div>
             <div class="form-group row">
                 <label for="company" class="col-sm-2 col-form-label">Company:</label>
                 <div class="col-sm-10">
                     <input type="text" name="company" id="company" placeholder="Required" class="form-control" required>
-                    <div class="invalid-feedback">Please provide a company.</div>
+                    <div class="invalid-feedback">Please provide a company</div>
                 </div>
             </div>
+            
             <div class="form-group row">
                 <label class="col-sm-2">Job Role:</label>
                 <div class="col-sm-10">

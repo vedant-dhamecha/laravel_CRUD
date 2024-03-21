@@ -10,9 +10,11 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable=[
+        'date',
         'profile',
         'name',
         'email',
+        'qua',
         'company',
         'role',
     ];
