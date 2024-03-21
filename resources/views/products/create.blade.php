@@ -6,27 +6,18 @@
     <title>Create a User</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
     <style>
-        .was-validated input:invalid {
-            border-color: #dc3545;
-        }
-
-        .was-validated input:valid {
-            border-color: #28a745;
-        }
-
-        .was-validated textarea:invalid {
-            border-color: #dc3545;
-        }
-
-        .was-validated textarea:valid {
-            border-color: #28a745;
-        }
-
+        .was-validated input:invalid,
+        .was-validated textarea:invalid,
         .was-validated select:invalid {
             border-color: #dc3545;
         }
 
+        .was-validated input:valid,
+        .was-validated textarea:valid,
         .was-validated select:valid {
             border-color: #28a745;
         }
@@ -35,16 +26,23 @@
         .was-validated .form-control:invalid:focus ~ .invalid-feedback {
             display: block;
         }
+
+        .concert-one-regular {
+            font-family: "Concert One", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+            font-size: 40px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Create a User</h1>
+    <div class="container vh-100 gradient-custom">
+        <h1 class="text-center font-heading mb-6 concert-one-regular">Create a New User</h1>
         <div>
             @if($errors->any())
             <ul>
                 @foreach($errors->all() as $error)
-                    <li>{{$error}}</li>
+                <li>{{$error}}</li>
                 @endforeach
             </ul>
             @endif
@@ -71,41 +69,37 @@
                 <label for="email" class="col-sm-2 col-form-label">Email:</label>
                 <div class="col-sm-10">
                     <input type="email" pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" name="email" id="email" placeholder="Required" class="form-control" required>
-                    <div class="invalid-feedback">Please provide a valid email address</div>
+                    <div class="invalid-feedback">Please provide a valid email address.</div>
                 </div>
             </div>
             <div class="form-group row">
-                <lable for="date" class="col-sm-2 col-form-lable">Date:</lable>
-                <div class="col-sm-10"><input type="date" name="date" id="date" placeholder="required" class="form-control" required>
-                <div class="invalid-feedback">Please provide a date.</div>
+                <label for="date" class="col-sm-2 col-form-label">Date:</label>
+                <div class="col-sm-10">
+                    <input type="date" name="date" id="date" placeholder="Required" class="form-control" required>
+                    <div class="invalid-feedback">Please provide a date.</div>
+                </div>
             </div>
-            
             <div class="form-group row">
                 <label class="col-sm-2">Qualification:</label>
                 <div class="col-sm-10">
-                    <br>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="qua[]" id="ug" value="UG" >
-                        <label class="form-check-label" for="qua">UG</label>
+                        <input class="form-check-input" type="checkbox" name="qua[]" id="ug" value="UG" required>
+                        <label class="form-check-label" for="ug">UG</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="qua[]" id="pg" value="PG" >
-                        <label class="form-check-label" for="qua">PG</label>
+                        <input class="form-check-input" type="checkbox" name="qua[]" id="pg" value="PG" required>
+                        <label class="form-check-label" for="pg">PG</label>
                     </div>
-                    <div class="invalid-feedback">Please select a Qualification</div>
+                    <div class="invalid-feedback">Please select a qualification.</div>
                 </div>
-            </div>
-            
-
             </div>
             <div class="form-group row">
                 <label for="company" class="col-sm-2 col-form-label">Company:</label>
                 <div class="col-sm-10">
                     <input type="text" name="company" id="company" placeholder="Required" class="form-control" required>
-                    <div class="invalid-feedback">Please provide a company</div>
+                    <div class="invalid-feedback">Please provide a company.</div>
                 </div>
             </div>
-            
             <div class="form-group row">
                 <label class="col-sm-2">Job Role:</label>
                 <div class="col-sm-10">
@@ -114,21 +108,20 @@
                         <label class="form-check-label" for="php">PHP Intern</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="role" id="backend" value="backend" required>
+                        <input class="form-check-input" type="radio" name="role" id="backend" value="Backend" required>
                         <label class="form-check-label" for="backend">Backend Dev</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="role" id="frontend" value="frontend" required>
+                        <input class="form-check-input" type="radio" name="role" id="frontend" value="Frontend" required>
                         <label class="form-check-label" for="frontend">Frontend Dev</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="role" id="ui" value="ui" required>
+                        <input class="form-check-input" type="radio" name="role" id="ui" value="UI" required>
                         <label class="form-check-label" for="ui">UI Designer</label>
                     </div>
                     <div class="invalid-feedback">Please select a job role.</div>
                 </div>
             </div>
-            
             <div class="form-group row">
                 <div class="col-sm-10 offset-sm-2">
                     <button type="submit" class="btn btn-primary">Save a New User</button>
@@ -136,7 +129,6 @@
             </div>
         </form>
     </div>
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
