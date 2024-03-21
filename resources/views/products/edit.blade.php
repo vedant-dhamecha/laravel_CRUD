@@ -10,12 +10,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asar&display=swap" rel="stylesheet">
     <style>
     .concert-one-regular {
         font-family: "Concert One", sans-serif;
         font-weight: 800;
         font-style: normal;
         font-size: 40px;
+    }
+
+    .asar-regular {
+        font-family: "Asar", serif;
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    .box {
+        align: center;
+        margin: auto auto;
+        width: 800px;
+        padding: 10px 50px 10px 10px;
+        background: #f9f9f9;
+        border: 2px solid #333;
     }
     </style>
 </head>
@@ -32,37 +50,39 @@
             </ul>
             @endif
         </div>
-        <form method="post" action="{{route('product.update', ['product' => $product])}}" class="needs-validation"
+        <form method="post" action="{{route('product.update', ['product' => $product])}}" class="needs-validation box"
             enctype="multipart/form-data" novalidate>
             @csrf
             @method('put')
-            <div class="form-group row">
+            <div class="form-group row asar-regular">
                 <label for="profile" class="col-sm-2 col-form-label">Profile:</label>
-                <img src="{{ asset('storage/'.$product->profile) }}" class="img-fluid img-thumbnail" width="150">
-                <div class="col-sm-10">
+                <div class="col-sm-4">
+                    <img src="{{ asset('storage/'.$product->profile) }}" class="img-fluid img-thumbnail mb-2"
+                        width="150">
                     <input type="file" name="profile" id="profile" class="form-control" required>
                     <div class="invalid-feedback">Please upload a profile picture.</div>
                 </div>
             </div>
-            <div class="form-group row">
+
+            <div class="form-group row asar-regular">
                 <label for="date" class="col-sm-2 col-form-label">Date:</label>
-                <div class="col-sm-10">
+                <div class="col-sm-5">
                     <input type="date" name="date" id="date" placeholder="required" class="form-control"
                         value="{{$product->date}}" required>
                     <div class="invalid-feedback">Please provide a date.</div>
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row asar-regular">
                 <label for="name" class="col-sm-2 col-form-label">Name</label>
-                <div class="col-sm-10">
+                <div class="col-sm-5">
                     <input type="text" name="name" id="name" placeholder="Name" value="{{$product->name}}"
                         class="form-control" required>
                     <div class="invalid-feedback">Please provide a name.</div>
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row asar-regular">
                 <label class="col-sm-2">Qualification:</label>
-                <div class="col-sm-10">
+                <div class="col-sm-5">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="qua[]" id="ug" value="UG"
                             {{ strpos($product->qua, 'UG') !== false ? 'checked' : '' }}>
@@ -76,25 +96,25 @@
                     <div class="invalid-feedback">Please select a Qualification</div>
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row asar-regular">
                 <label for="email" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
+                <div class="col-sm-5">
                     <input type="email" pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" name="email" id="email"
                         placeholder="email" value="{{$product->email}}" class="form-control" required>
                     <div class="invalid-feedback">Please provide a email.</div>
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row asar-regular">
                 <label for="company" class="col-sm-2 col-form-label">Company</label>
-                <div class="col-sm-10">
+                <div class="col-sm-5">
                     <input type="text" name="company" id="company" placeholder="company" value="{{$product->company}}"
                         class="form-control" required>
                     <div class="invalid-feedback">Please provide a company.</div>
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row asar-regular">
                 <label for="role" class="col-sm-2 col-form-label">Job Role:</label>
-                <div class="col-sm-10">
+                <div class="col-sm-5">
                     <input type="radio" id="php" name="role" value="PHP" {{ $product->role == 'PHP' ? 'checked' : ''}}>
                     <label for="php">PHP Intern</label><br>
 
@@ -111,7 +131,7 @@
                     <div class="invalid-feedback">Please provide a Job Role.</div>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group asar-regular">
                 <button type="submit" class="btn btn-primary">Update</button>
             </div>
         </form>
