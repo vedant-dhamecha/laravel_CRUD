@@ -1,12 +1,13 @@
 ## CRUD OPERATION WITH LARAVEL
 ## User VIEW PAGE
-![Screenshot 2024-03-20 181235](https://github.com/vedant-dhamecha/laravel_CRUD/assets/105575987/37709673-8920-408f-89dc-b5d752fd24f6)
+![Screenshot 2024-03-22 101227](https://github.com/vedant-dhamecha/laravel_CRUD/assets/105575987/83ebaa4c-d7ab-4b35-8052-91c37b5c1456)
 
 ## CREATING A NEW USER
-![Screenshot 2024-03-20 182511](https://github.com/vedant-dhamecha/laravel_CRUD/assets/105575987/2f2d24c1-f0d1-4989-bce2-038c37c4e1e2)
+![Screenshot 2024-03-22 101242](https://github.com/vedant-dhamecha/laravel_CRUD/assets/105575987/8bd3564d-048b-435b-8090-d8d49e971bbe)
 
 ## UPDATING A USER
-![Screenshot 2024-03-20 182533](https://github.com/vedant-dhamecha/laravel_CRUD/assets/105575987/9af568cc-8a0b-492a-8071-f26de913cd10)
+![Screenshot 2024-03-22 101257](https://github.com/vedant-dhamecha/laravel_CRUD/assets/105575987/6f343b84-e200-48f2-bfbe-3c1391ffcddc)
+
 
 
 
