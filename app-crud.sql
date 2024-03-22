@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2024 at 01:16 PM
+-- Generation Time: Mar 22, 2024 at 05:43 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -138,9 +138,11 @@ CREATE TABLE `password_reset_tokens` (
 
 CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `date` date DEFAULT current_timestamp(),
   `profile` text NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` text NOT NULL,
+  `qua` varchar(20) DEFAULT NULL,
   `company` text NOT NULL,
   `role` text NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -151,12 +153,13 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `profile`, `name`, `email`, `company`, `role`, `created_at`, `updated_at`) VALUES
-(1, 'profiles/1710936238_image_part_001.jpg', 'Vedant Dhamecha', 'vedantdhamecha@gmail.com', 'Spaculus Software', 'PHP', '2024-03-20 06:33:58', '2024-03-20 06:33:58'),
-(2, 'profiles/1710936356_image_part_002.jpg', 'Grishma Patel', 'grish1610@gmail.com', 'Spaculus Software', 'ui', '2024-03-20 06:35:56', '2024-03-20 06:35:56'),
-(3, 'profiles/1710936426_image_part_003.jpg', 'Vraj Patel', 'vrajpatel@gmail.com', 'ONGC', 'frontend', '2024-03-20 06:37:06', '2024-03-20 06:37:06'),
-(4, 'profiles/1710936478_image_part_004.jpg', 'Deep Yadav', 'deep.yadav@gmail.com', 'Alite Projects', 'backend', '2024-03-20 06:37:58', '2024-03-20 06:37:58'),
-(5, 'profiles/1710936599_image_part_005.jpg', 'Dhvani Patel', 'dhvanipatel123@gmail.com', 'Crest', 'frontend', '2024-03-20 06:39:59', '2024-03-20 06:39:59');
+INSERT INTO `products` (`id`, `date`, `profile`, `name`, `email`, `qua`, `company`, `role`, `created_at`, `updated_at`) VALUES
+(1, '2024-03-20', 'profiles/1710936238_image_part_001.jpg', 'Vedant Dhamecha', 'vedantdhamecha@gmail.com', '[\"UG\"]', 'Spaculus Software', 'PHP', '2024-03-20 06:33:58', '2024-03-21 03:56:39'),
+(2, '2024-03-05', 'profiles/1710936356_image_part_002.jpg', 'Grishma Patel', 'grish1610@gmail.com', '[\"PG\"]', 'Spaculus Software', 'ui', '2024-03-20 06:35:56', '2024-03-21 03:56:43'),
+(3, '2024-03-01', 'profiles/1710936426_image_part_003.jpg', 'Vraj Patel', 'vrajpatel@gmail.com', '[\"UG\"]', 'ONGC', 'frontend', '2024-03-20 06:37:06', '2024-03-21 03:56:35'),
+(4, '2024-01-10', 'profiles/1710936478_image_part_004.jpg', 'Deep Yadav', 'deep.yadav@gmail.com', '[\"PG\"]', 'Alite Projects', 'backend', '2024-03-20 06:37:58', '2024-03-21 03:56:30'),
+(5, '2024-03-01', 'profiles/1710936599_image_part_005.jpg', 'Dhvani Patel', 'dhvanipatel123@gmail.com', '[\"UG\"]', 'Crest', 'frontend', '2024-03-20 06:39:59', '2024-03-21 03:54:54'),
+(36, '2024-03-21', 'profiles/1711002313_image_part_009.jpg', 'josni', 'host1@gmail.com', '[\"UG\",\"PG\"]', 'Spaculus Software', 'PHP', '2024-03-21 00:55:13', '2024-03-21 03:54:39');
 
 -- --------------------------------------------------------
 
@@ -178,7 +181,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('RgZCJuux9P5XnlxXLDPzm5ko337QaN6g9iaiiFiS', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoieklHaDVsbUYwT01kdlROVWFSMjMxWnFPZFlTOXF3c2paU1owdDhFbyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0Ijt9fQ==', 1710936940);
+('RniimuOSLfpSySHq9qd9exAspKOb3T3gio5KPSqS', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiaVBPMlNiUWRqS2hmVko3R0NsT0dQaVhlZTRCVERxdHhGeGx4RnV4SSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0LzEvZWRpdCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1711082569);
 
 -- --------------------------------------------------------
 
@@ -292,7 +295,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `users`
